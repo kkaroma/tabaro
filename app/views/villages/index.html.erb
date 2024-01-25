@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Villages</h1>
+
+<div id="villages">
+  <% @villages.each do |village| %>
+    <%= render village %>
+    <p>
+      <%= link_to "Show this village", village %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New village", new_village_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: village) do |form| %>
+  <% if village.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(village.errors.count, "error") %> prohibited this village from being saved:</h2>
+
+      <ul>
+        <% village.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :village_name, style: "display: block" %>
+    <%= form.text_field :village_name %>
+  </div>
+
+  <div>
+    <%= form.label :ward_id, style: "display: block" %>
+    <%= form.text_field :ward_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
